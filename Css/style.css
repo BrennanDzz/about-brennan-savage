@@ -1,0 +1,374 @@
+/* Selecciona todos los elementos, antes y después */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* Incluye el padding y border en el ancho total */
+  margin: 0;
+  /* Elimina márgenes heredados */
+  padding: 0;
+  /* Elimina rellenos heredados */
+}
+
+/* --- */
+
+/* Generales */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Sekuya", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p,
+a,
+span,
+li {
+  font-size: 18px;
+  font-family: "Montserrat";
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+ul li {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+li a {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+
+/* --- */
+
+/* Contenedor */
+.contenedor {
+  max-width: 1800px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+    "header header header"
+    "titulo titulo titulo"
+    "aside main main "
+    "footer footer footer";
+}
+
+
+
+.contenedor-estilo {
+  grid-template-areas:
+    "header header header"
+    "titulo titulo titulo"
+    "main main aside "
+    "footer footer footer";
+}
+
+.contenedor-trayectoria {
+
+  grid-template-areas:
+    "header header header"
+    "titulo titulo titulo"
+    "main main main"
+    "footer footer footer";
+}
+
+
+/* --- */
+
+/* Header  */
+header {
+  display: flex;
+  justify-content: space-between;
+  grid-area: header;
+
+}
+
+.menu-nav {
+
+  grid-area: nav;
+  display: flex;
+
+}
+
+.menu-nav ul {
+  display: flex;
+
+
+}
+
+.menu-nav a {
+  padding: 20px 40px;
+
+}
+
+header ul li {
+  display: flex;
+  margin-bottom: 0;
+}
+
+header ul li a {
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+header ul li:hover {
+  background-color: black;
+}
+
+header ul li:hover a {
+  color: white;
+}
+
+.logo {
+  width: 200px;
+  margin-left: 30px;
+}
+
+
+
+/* --- */
+
+/* Div */
+.titulo {
+  grid-area: titulo;
+  background-color: rgba(18, 18, 18, .6);
+
+}
+
+div h1 {
+  height: 200px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 50px;
+  letter-spacing: 3px;
+  grid-area: titulo;
+}
+
+.hero {
+  position: relative;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../Img/b-savage-ig-panoramica.webp");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+
+/* 
+.hero .difuminado{
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 3;
+  height: 100vh;
+  width: 100vw;
+  bottom: -500px;
+  backdrop-filter: blur(5px);
+  
+    
+}
+ */
+/* --- */
+
+/* Main | Redes Sociales */
+main {
+  grid-area: main;
+  padding: 50px;
+
+}
+
+main h2,
+main>p {
+  margin-bottom: 20px;
+}
+
+main>p {
+  line-height: 1.9;
+}
+
+main section p {
+  margin-bottom: 0;
+}
+
+main h2 {
+  font-size: 40px;
+}
+
+
+.main-trayectoria {
+  background-color: black;
+  max-width: 1800px;
+  color: white;
+  margin: 0;
+  grid-area: main;
+  padding: 0px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(auto, 1fr);
+  grid-template-areas:
+    "nube-1 nube-1"
+    "section-1 section-2"
+    "section-1 section-3"
+    "nube-2 nube-2"
+  ;
+
+  position: relative;
+
+
+}
+
+.nubes-1 {
+  grid-area: nube-1;
+  margin-top: -20px;
+
+
+}
+
+.nubes-2 {
+  grid-area: nube-2;
+  margin-bottom: 0px;
+
+}
+
+.section-1 {
+  grid-area: section-1;
+  margin: 0 auto;
+}
+
+.section-2 {
+  grid-area: section-2;
+  margin: 0 auto;
+}
+
+.section-3 {
+  grid-area: section-3;
+  margin: 0 auto;
+
+  transform: rotate(180deg);
+
+}
+
+.nubes-1,
+.nubes-2 {
+  position: relative;
+  width: 100%;
+  z-index: 30;
+}
+
+.main-trayectoria section {
+  padding: 20px;
+}
+
+.main-trayectoria section ol {
+  padding-left: 30px;
+}
+
+.main-trayectoria section ol li {
+  margin: 0;
+  font-size: 14px;
+}
+
+.main-trayectoria span {
+  color: #ad030f;
+}
+
+
+
+.redes-sociales {
+  display: flex;
+  column-gap: 32px;
+  padding-top: 40px;
+  align-items: center;
+}
+
+.redes-sociales a,
+.redes-sociales-2 a {
+  display: block;
+  margin-bottom: 0;
+}
+
+.redes-sociales ul {
+  display: flex;
+  column-gap: 32px;
+}
+
+.redes-sociales-2 {
+  display: flex;
+  column-gap: 32px;
+  align-items: center;
+}
+
+.redes-sociales-2 p {
+  font-size: 28px;
+}
+
+.redes-sociales h3,
+.redes-sociales-2 h3 {
+  font-size: 30px;
+}
+
+hr {
+  border: 2px solid bottom;
+  margin: 20px 0;
+}
+
+/* --- */
+
+/* Aside | Aside - Img */
+aside {
+  grid-area: aside;
+}
+
+.Imagen-aside .Fotografia-Brennan {
+  width: 40vw;
+  max-width: 1200px;
+}
+
+
+/* Footer */
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  grid-area: footer;
+}
+
+.vlog {
+  padding: 0;
+}
+
+.background-img-vlog {
+  background-image:
+
+    url("../Img/Vlog-Brennan.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 1800px;
+}
+
+
+footer a {
+  color: black;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: gainsboro;
+}
+
+/* --- */
