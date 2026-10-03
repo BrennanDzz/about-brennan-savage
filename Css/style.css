@@ -27,7 +27,8 @@ h6 {
 p,
 a,
 span,
-li {
+li,
+small {
   font-size: 18px;
   font-family: "Montserrat";
   line-height: 1.8;
@@ -60,8 +61,6 @@ li a {
     "footer footer footer";
 }
 
-
-
 .contenedor-estilo {
   grid-template-areas:
     "header header header"
@@ -71,14 +70,12 @@ li a {
 }
 
 .contenedor-trayectoria {
-
   grid-template-areas:
     "header header header"
     "titulo titulo titulo"
     "main main main"
     "footer footer footer";
 }
-
 
 /* --- */
 
@@ -87,25 +84,19 @@ header {
   display: flex;
   justify-content: space-between;
   grid-area: header;
-
 }
 
 .menu-nav {
-
   grid-area: nav;
   display: flex;
-
 }
 
 .menu-nav ul {
   display: flex;
-
-
 }
 
 .menu-nav a {
   padding: 20px 40px;
-
 }
 
 header ul li {
@@ -134,15 +125,12 @@ header ul li:hover a {
   margin-left: 30px;
 }
 
-
-
 /* --- */
 
 /* Div */
 .titulo {
   grid-area: titulo;
   background-color: black;
-
 }
 
 div h1 {
@@ -164,18 +152,14 @@ div h1 {
     url("../Img/b-savage-ig-panoramica.webp");
   background-size: cover;
   background-position: center;
-  height: 100vh;
-  mask-image: linear-gradient(to bottom,
-      #000 95%,
-      transparent 100%);
+  aspect-ratio: 16/9;
+  mask-image: linear-gradient(to bottom, #000 95%, transparent 100%);
 }
-
 
 /* Main | Redes Sociales */
 main {
   grid-area: main;
   padding: 50px;
-
 }
 
 main h2,
@@ -195,8 +179,6 @@ main h2 {
   font-size: 40px;
 }
 
-
-
 .main-trayectoria {
   background-color: black;
   max-width: 1800px;
@@ -204,31 +186,22 @@ main h2 {
   margin: 0;
   grid-area: main;
   padding: 0px;
-
 }
 
 .nubes-1,
 .nubes-2 {
   width: 100%;
-
 }
 
 .div-nubes {
   grid-area: nube;
-
 }
 
-
-
-
 .div-nubes .nubes-1 {
-  mask-image: linear-gradient(to top,
-      #000 95%,
-      transparent 100%);
+  mask-image: linear-gradient(to top, #000 95%, transparent 100%);
   position: relative;
   top: -20px;
 }
-
 
 .main-trayectoria .div-secciones {
   display: grid;
@@ -246,7 +219,6 @@ main h2 {
   text-transform: uppercase;
 }
 
-
 .section-1 {
   grid-area: section-1;
   margin: 0 auto;
@@ -262,10 +234,7 @@ main h2 {
   margin: 0 auto;
 
   transform: rotate(180deg);
-
 }
-
-
 
 .main-trayectoria section {
   padding: 20px;
@@ -283,8 +252,6 @@ main h2 {
 .main-trayectoria span {
   color: #ad030f;
 }
-
-
 
 .redes-sociales {
   display: flex;
@@ -336,7 +303,6 @@ aside {
   max-width: 1200px;
 }
 
-
 /* Footer */
 
 footer {
@@ -345,24 +311,8 @@ footer {
   padding: 30px;
   grid-area: footer;
   flex-wrap: wrap;
+  max-width: 1800px;
 }
-
-.vlog {
-  padding: 0;
-  background-color: black;
-}
-
-.background-img-vlog {
-  background-image:
-
-    url("../Img/Vlog-Brennan.png");
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 1800px;
-
-}
-
 
 footer a {
   color: black;
@@ -373,16 +323,219 @@ footer a:hover {
   color: gainsboro;
 }
 
-
-
-.vlog img {
-  display: block;
-  width: 35vw;
+/* Footer | Pag. Trayectoria | Vlog | YT*/
+.vlog {
+  padding: 0;
+  background-color: black;
+  width: 100%;
 }
-.vlog .img-miniaturas{
+
+.vlog-background-img {
+  background-image: url("../Img/Vlog-Brennan.png");
+  background-size: cover;
+  background-position: center;
+  width: inherit;
+  aspect-ratio: 16/9;
+}
+
+.yt-carrusel {
   display: flex;
-  padding: 30px 10px;
-} 
+  padding: 10px 30px;
+  width: inherit;
+  height: 300px;
+  gap: 20px;
+}
+
+.yt-item {
+  width: inherit;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.yt-item:hover {
+  cursor: pointer;
+}
+
+.yt-item:first-child {
+  background-image:
+    url("../Img/trayectoria-miniatura-bn-3.png");
+}
+
+.yt-item:nth-child(2) {
+  background-image:
+    url("../Img/trayectoria-miniatura-bn-2.png");
+}
+
+.yt-item:last-child {
+  background-image:
+    url("../Img/trayectoria-miniatura-bn-1.png");
+}
+
+.yt-item:first-child::after {
+  background-image: url("../Img/trayectoria-miniatura-3.jpg");
+}
+
+.yt-item:nth-child(2)::after {
+  background-image: url("../Img/trayectoria-miniatura-2.jpg");
+}
+
+.yt-item:last-child::after {
+  background-image: url("../Img/trayectoria-miniatura-1.jpg");
+}
+
+.yt-item:first-child::after,
+.yt-item:nth-child(2)::after,
+.yt-item:last-child::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.yt-item:first-child:hover::after,
+.yt-item:nth-child(2):hover::after,
+.yt-item:last-child:hover::after {
+  opacity: 1;
+}
+
+
+.yt-item span {
+  background-color: #ad030f;
+  color: #fff;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  border-radius: 12px;
+  height: 40px;
+  margin: 0;
+  transition: transform 0.3s ease,
+    background-color 0.3s ease;
+  z-index: 30;
+
+}
+
+.yt-item:hover span {
+  transform: scale(1.1);
+  background-color: #d00010;
+}
+
+/* Footer | Pag. Trayectoria | CTA*/
+
+.cta-footer {
+  background-image: url("../Img/banner-nieve-footer.webp");
+  background-size: cover;
+  background-position: center;
+  width: inherit;
+  min-height: 310px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  row-gap: 20px;
+}
+
+.cta-footer h5 {
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.cta-footer a {
+  margin-bottom: 0;
+  padding: 8px 16px;
+  background-color: #ad030f;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.cta-footer a:hover {
+  background-color: #d00010;
+}
+
+.cta-footer>* {
+  color: #fff;
+
+}
+
+/* Footer | Pag. Trayectoria | Social icon */
+
+.social-icon {
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.social-icon a {
+  margin-bottom: 0;
+}
+
+.social-icon img {
+  width: 80px;
+  display: block;
+}
+
+.social-icon .icon-red {
+  display: none;
+  transition: opacity 0.2 ease;
+}
+
+.social-icon a:hover .icon-red {
+  display: block;
+
+}
+
+.social-icon a:hover img:not(.icon-red) {
+  display: none;
+
+}
+
+
+/* Footer | Pag. Trayectoria | Textos Legales*/
+
+.textos-legales {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 120px;
+  width: inherit;
+}
+
+.textos-legales * {
+  color: #FFFFFFBF;
+  font-size: .80rem;
+  margin-bottom: 0;
+  font-weight: 600;
+  letter-spacing: .099rem;
+}
+
+.textos-legales a:hover,
+.textos-legales li:hover {
+  text-decoration: underline;
+}
+
+.textos-legales ul {
+  display: flex;
+  flex-flow: wrap;
+  gap: 2px 30px;
+}
+
+.textos-legales ul li {
+  list-style: disc;
+}
+
 
 /* --- */
 
