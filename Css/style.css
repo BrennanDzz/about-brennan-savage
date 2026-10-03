@@ -296,10 +296,12 @@ hr {
 /* Aside | Aside - Img */
 aside {
   grid-area: aside;
+  height: 100%;
 }
 
-.Imagen-aside .Fotografia-Brennan {
+aside .Fotografia-Brennan {
   width: 40vw;
+  height: inherit;
   max-width: 1200px;
 }
 
