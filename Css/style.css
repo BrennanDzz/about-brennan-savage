@@ -220,7 +220,7 @@ h2 {
 
 .main-trayectoria .div-secciones {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: repeat(auto, 1fr);
   grid-template-areas:
     "section-1 section-2"
@@ -566,22 +566,27 @@ footer a:hover {
 /* Media query | Header */
 @media (max-width: 1200px) {
 
-  p{
+  p {
     font-size: 15px;
   }
-  .redes-sociales-2 p{
-    font-size: 22px;
-  }
-  h2{
-    font-size: 30px;
-  }
-  h3, h5{
+
+  .redes-sociales-2 p {
     font-size: 22px;
   }
 
-  main{
+  h2 {
+    font-size: 30px;
+  }
+
+  h3,
+  h5 {
+    font-size: 22px;
+  }
+
+  main {
     padding: 50px 20px;
   }
+
   /* Contenedor */
   .contenedor {
     max-width: 1200px;
@@ -613,7 +618,7 @@ footer a:hover {
     color: black;
   }
 
-  .mobile .menu-nav-mobile {
+  .menu-nav-mobile {
     display: none;
   }
 
@@ -647,9 +652,10 @@ footer a:hover {
 
   /* --- */
   /* Main */
-  .main img{
+  .main img {
     width: 35px;
   }
+
   /* --- */
   /* Aside */
 
@@ -671,11 +677,32 @@ footer a:hover {
     font-size: 25px;
 
   }
+
   /* --- */
   /* Footer | textos legales */
-  .textos-legales ul{
+  .textos-legales ul {
     display: none;
   }
-  
+
   /* --- */
+
+  /* Yt-Carrusel */
+  .yt-carrusel {
+    padding: 10px;
+  }
+
+  /* --- */
+}
+
+@media (max-width: 768px) {
+  .main-trayectoria .div-secciones {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "section-1"
+      "section-2"
+      "section-3";
+  }
+  .section-3{
+    margin: 0;
+  }
 }
