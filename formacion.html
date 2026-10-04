@@ -11,7 +11,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sekuya&display=swap"
     rel="stylesheet" />
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <title>Brennan Sabvage</title>
 </head>
 
@@ -20,8 +20,8 @@
     <header>
       <a href="index.html"><img class="logo" src="Img/Logo-Brennan-Savage.webp"
           alt="logo del artista Brennan Savage" /></a>
-      <nav class="menu-nav">
-        <ul>
+      <nav class="desktop ">
+        <ul class="menu-nav-desktop">
           <li>
             <a href="index.html" target="_blank" rel="noopener noreferrer">Orígenes</a>
           </li>
@@ -35,20 +35,33 @@
             <a href="trayectoria.html" target="_blank" rel="noopener noreferrer">Trayectoria</a>
           </li>
         </ul>
+
       </nav>
+      <!-- Nav Mobile -->
+      <nav class="mobile">
+        <button class="button-toggle">☰</button>
+        <ul class="menu-nav-mobile">
+          <li>
+            <a href="index.html" target="_blank" rel="noopener noreferrer">Orígenes</a>
+          </li>
+          <li>
+            <a href="estilo.html" target="_blank" rel="noopener noreferrer">Estilo</a>
+          </li>
+          <li>
+            <a href="formacion.html" target="_blank" rel="noopener noreferrer">Formación</a>
+          </li>
+          <li>
+            <a href="trayectoria.html" target="_blank" rel="noopener noreferrer">Trayectoria</a>
+          </li>
+        </ul>
+
+      </nav>
+      <!-- Nav Mobile -->
     </header>
     <div class="titulo">
       <h1>Formación</h1>
     </div>
-    <main>
-      <!-- <h2>A Inicios</h2>
-        <p>
-          Brennan Savage nació en Long Beach, Nueva York, y durante su infancia
-          creció en San Diego, California. Desde pequeño estuvo rodeado de
-          diferentes estilos musicales gracias a la influencia de su familia,
-          especialmente de su padre, que le acercó a artistas de rock y folk
-          como Bob Dylan, The Beatles, The Police y Elton John.
-        </p> -->
+    <main class="main">
       <h2>Influencia</h2>
       <p>
         Sus primeras influencias no estuvieron limitadas al rap. La música que
@@ -93,17 +106,51 @@
       </section>
     </main>
 
-    <aside class="Imagen-aside">
-      <img class="Fotografia-Brennan" src="Img/Brennan-Formacion.webp" alt="Fotografía estilo de Brennan Savage" />
+    <aside class="imagen-aside">
+      <img class="fotografia-brennan" src="Img/Brennan-Formacion.webp" alt="Fotografía estilo de Brennan Savage" />
     </aside>
 
-    <footer>
-      <p>
-        Copyr@ight2026 @Brennan Savage |
-        <a href="https://github.com/BrennanDzz/BrennanDzz1" target="_blank">BrennanDzz</a>
-      </p>
+    <footer class="vlog">
+      <div class="cta-footer">
+        <h5>Si estás en España</h5>
+        <a href="https://brennansavage.com" target="_blank">Más Información</a>
+      </div>
+      <div class="social-icon">
+        <a href="https://www.instagram.com/brennansavage/" target="_blank">
+          <img src="Img/ig-icon.png" alt="Icono de instagram">
+          <img src="Img/ig-icon-red.png" alt="Icono de instagram" class="icon-red">
+        </a>
+        <a href="https://www.facebook.com/brennansavagemusic/" target="_blank">
+          <img src="Img/fb-icon.png" alt="Icono de facebook">
+          <img src="Img/fb-icon-red.png" alt="Icono de facebook" class="icon-red">
+        </a>
+        <a href="https://www.youtube.com/brennansavage" target="_blank">
+          <img src="Img/yt-icon.png" alt="Icono de facebook">
+          <img src="Img/yt-icon-red.png" alt="Icono de Youtube" class="icon-red">
+        </a>
+        <a href="https://www.tiktok.com/@brennansavage" target="_blank">
+          <img src="Img/tiktok-icon.png" alt="Icono de facebook">
+          <img src="Img/tiktok-icon-red.png" alt="Icono de Tiktok" class="icon-red">
+        </a>
+        <a href="https://open.spotify.com/intl-es/artist/6SSmy635N3a4oWmPk85xpK" target="_blank">
+          <img src="Img/spotify-icon.png" alt="Icono de facebook">
+          <img src="Img/spotify-icon-red.png" alt="Icono de Spotify" class="icon-red">
+        </a>
+
+      </div>
+      <div class="textos-legales">
+        <small>@Brennan Savage, <a href="https://github.com/BrennanDzz" target="_blank">BrennanDzz</a></small>
+        <ul>
+          <li>Politica de reembolso</li>
+          <li>Politica de privacidad</li>
+          <li>Politica de envio</li>
+          <li>Informacion de contacto</li>
+          <li>Aviso legal</li>
+        </ul>
+      </div>
     </footer>
   </div>
+  <script src="Js/main.js"></script>
 </body>
 
 </html>
