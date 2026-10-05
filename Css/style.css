@@ -55,7 +55,7 @@ li a {
 
 /* Contenedor */
 .contenedor {
-  max-width: 1800px;
+  max-width: 1920px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, auto);
@@ -71,6 +71,14 @@ li a {
     "header header header"
     "titulo titulo titulo"
     "main main aside "
+    "footer footer footer";
+}
+
+.contenedor-formacion {
+  grid-template-areas:
+    "header header header"
+    "titulo titulo titulo"
+    "main main main "
     "footer footer footer";
 }
 
@@ -196,12 +204,157 @@ h2 {
 
 .main-trayectoria {
   background-color: black;
-  max-width: 1800px;
+  max-width: 1920px;
   color: white;
   margin: 0;
   grid-area: main;
   padding: 0px;
+  height: 100vw;
 }
+
+.main-formacion {
+  /* background-image: url("../Img/brennan-savage-formacion-2.jpg"); */
+  background-image: url("../Img/brennan-savage-formacion-3.webp");
+  background-repeat: no-repeat;
+  background-color: #000;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 100% -200px;
+  aspect-ratio: 16/9;
+  display: flex;
+  /* align-items: end; */
+  justify-content: space-between;
+  flex-flow: column;
+  padding: 10px 50px;
+  position: relative;
+}
+
+.main-formacion>a {
+  position: absolute;
+  inset: 0;
+}
+
+.button-play {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  border-color: #fff;
+  font-size: 1.875rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button-track {
+  display: flex;
+  align-items: center;
+  margin: 10% 0 ;
+  height: 80px;
+  gap: 20px;
+}
+
+.button-track span {
+  color: #fff;
+  border-top: 1.5px solid #fff;
+  line-height: 1.3;
+  padding-top: 10px;
+
+}
+
+.section-cards {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+
+.card {
+  /* aspect-ratio: 1 / 1; */
+  min-height: 420px;
+  height: 700px;
+  width: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  opacity: 1;
+
+  display: flex;
+  flex-flow: wrap column-reverse;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.card:nth-child(1) {
+  background-image: url("../Img/camiseta-goat-anverso.webp");
+}
+
+.card:nth-child(2) {
+  background-image: url("../Img/polera-anversa.webp");
+}
+
+.card:nth-child(3) {
+  background-image: url("../Img/camista-cruz-anverso.webp");
+}
+
+.card:nth-child(4) {
+  background-image: url("../Img/camiseta-brennan-anverso.webp");
+}
+
+
+.card:nth-child(1):hover::after {
+  background-image: url("../Img/camiseta-goat-reverso.webp");
+}
+
+.card:nth-child(2):hover::after {
+  background-image: url("../Img/polera-reversa.webp");
+}
+
+.card:nth-child(3):hover::after {
+  background-image: url("../Img/camiseta-cruz-reversa.webp");
+}
+
+.card:nth-child(4):hover::after {
+  background-image: url("../Img/camiseta-brennan-reverso.webp");
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  transform-origin: center;
+  z-index: 10;
+  transition:
+
+    opacity .5s ease,
+    transform .8s ease;
+}
+
+.card:hover::after {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
+
+.card h3 {
+  color: #ad030f;
+}
+
+.card img {
+  align-self: end;
+  width: 100px;
+  position: relative;
+  z-index: 20;
+}
+
 
 .nubes-1,
 .nubes-2 {
@@ -328,7 +481,7 @@ footer {
   padding: 30px;
   grid-area: footer;
   flex-wrap: wrap;
-  max-width: 1800px;
+  max-width: 1920px;
 }
 
 footer a {
@@ -512,7 +665,7 @@ footer a:hover {
 
 .social-icon .icon-red {
   display: none;
-  transition: opacity 0.2 ease;
+  transition: opacity 0.2s ease;
 }
 
 .social-icon a:hover .icon-red {
@@ -538,7 +691,7 @@ footer a:hover {
 
 .textos-legales * {
   color: #FFFFFFBF;
-  font-size: .80rem;
+  font-size: .8rem;
   margin-bottom: 0;
   font-weight: 600;
   letter-spacing: .099rem;
@@ -568,6 +721,7 @@ footer a:hover {
 
   p {
     font-size: 15px;
+
   }
 
   .redes-sociales-2 p {
@@ -693,7 +847,15 @@ footer a:hover {
 
   /* --- */
 }
+@media (max-width:992px){
+  .card{
+    background-position: center;
+    height: auto;
 
+  }
+
+ 
+}
 @media (max-width: 768px) {
   .main-trayectoria .div-secciones {
     grid-template-columns: 1fr;
@@ -702,7 +864,29 @@ footer a:hover {
       "section-2"
       "section-3";
   }
-  .section-3{
+
+  .section-3 {
     margin: 0;
+  }
+
+  .section-cards {
+    flex-flow: column wrap;
+  }
+
+  .card {
+    width: 100%;
+     background-position: revert;
+  }
+
+  .card img {
+    width: 100px;
+   
+
+  
+  }
+
+  .main-formacion {
+    background-size: cover;
+    background-position: 80% 100%;
   }
 }
