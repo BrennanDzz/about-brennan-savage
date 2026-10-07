@@ -209,7 +209,7 @@ h2 {
   margin: 0;
   grid-area: main;
   padding: 0px;
-  height: 100vw;
+ /*  height: 100vw; */
 }
 
 .main-formacion {
@@ -276,6 +276,7 @@ h2 {
   width: 500px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center top;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   position: relative;
@@ -404,6 +405,11 @@ h2 {
   transform: rotate(180deg);
 }
 
+
+.section-3 li:first-child {
+  text-decoration: line-through;
+}
+
 .main-trayectoria section {
   padding: 20px;
 }
@@ -513,7 +519,8 @@ footer a:hover {
   display: flex;
   padding: 10px 30px;
   width: inherit;
-  height: 300px;
+  height: 350px;
+  
   gap: 20px;
 }
 
@@ -873,6 +880,10 @@ footer a:hover {
     flex-flow: column wrap;
   }
 
+  .yt-carrusel {
+    height: 300px;
+  }
+
   .card {
     width: 100%;
      background-position: revert;
@@ -881,12 +892,11 @@ footer a:hover {
   .card img {
     width: 100px;
    
-
-  
   }
 
   .main-formacion {
     background-size: cover;
     background-position: 80% 100%;
   }
+  
 }
